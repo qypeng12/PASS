@@ -1,0 +1,15 @@
+{
+  "name": "PASS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "qypeng",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "mongoose": "^5.10.2"
+  }
+}
