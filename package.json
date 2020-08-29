@@ -1,5 +1,5 @@
 {
-  "name": "PASS",
+  "name": "pass",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,10 +7,18 @@
   },
   "author": "qypeng",
   "license": "ISC",
-  "keywords": [],
+  "keywords": [
+    "Node",
+    "JS",
+    "MongoDB",
+    "Mongoose",
+    "Socket.io"
+  ],
   "description": "",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.2"
+    "mongoose": "^5.10.2",
+    "socket.io": "^2.3.0"
   }
 }
