@@ -5,6 +5,36 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src=”/socket.io/socket.io.js”></script>
+<script
+$(() => {
+    $("#send").click(()=>{
+       sendMessage({
+          name: $("#name").val(), 
+          message:$("#message").val()});
+        })
+      getMessages()
+    }
+    
+function addMessages(message){
+   $("#messages").append(`
+      <h4> ${message.name} </h4>
+      <p>  ${message.message} </p>`)
+   }
+   
+function getMessages(){
+  $.get("http://localhost:3000/messages", (data) => {
+   data.forEach(addMessages);
+   })
+ }
+ 
+function sendMessage(message){
+   $.post("http://localhost:3000/messages", message)
+ }
+ var socket = io();
+socket.on("message", addMessages)
+ </script>
+
 <div class="container">
     <br>
     <div class="jumbotron">
